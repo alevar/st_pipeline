@@ -127,8 +127,8 @@ def InputReadsFilter(fw,
     
     # Create output file writers
     bam_file = pysam.AlignmentFile(out_rv, "wbu", header=bam_header)
-    fw_file = safeOpenFile(fw, "rU")
-    rv_file = safeOpenFile(rv, "rU")
+    fw_file = safeOpenFile(fw, "r")
+    rv_file = safeOpenFile(rv, "r")
     if keep_discarded_files:
         out_rv_handle_discarded = safeOpenFile(out_rv_discarded, 'w')
         out_rv_writer_discarded = writefq(out_rv_handle_discarded)
